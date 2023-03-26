@@ -3,12 +3,20 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  text-align: center;
   padding: 6rem;
   min-height: 100vh;
 }
 
+.loginButton {
+  padding: 6px 12px;
+  border-radius: 6px;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.47);
+}
+
 .loadouts {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   flex-direction: column;
   gap: 8px;
   margin-top: 12px;
@@ -25,7 +33,7 @@
   transition: all 0.3s;
 }
 
-.loadout:active {
+.loadout:active, .login-button:active {
   transform: scale(0.9);
 }
 

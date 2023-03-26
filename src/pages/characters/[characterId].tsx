@@ -62,7 +62,7 @@ const Component = ({ characterId }: { characterId: string }) => {
     <div>
       <div>Loadouts</div>
       <div className={styles.loadouts}>
-        {new Array(6).fill(null).map((_, index) => {
+        {new Array(10).fill(null).map((_, index) => {
           return (
             <Loadout
               onClick={() => handleClick(index)}
@@ -85,7 +85,7 @@ const Loadout = ({
 }) => {
   return (
     <div className={styles.loadout} onClick={onClick}>
-      {index}
+      {index + 1}
       <br />
     </div>
   );

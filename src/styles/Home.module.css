@@ -7,6 +7,28 @@
   min-height: 100vh;
 }
 
+.loadouts {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.loadout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  cursor: pointer;
+  border-radius: 6px;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.47);
+  transition: all 0.3s;
+}
+
+.loadout:active {
+  transform: scale(0.9);
+}
+
 .description {
   display: inherit;
   justify-content: inherit;
@@ -97,7 +119,7 @@
 
 .center::before,
 .center::after {
-  content: '';
+  content: "";
   left: 50%;
   position: absolute;
   filter: blur(45px);
@@ -125,7 +147,7 @@
 
 .thirteen::before,
 .thirteen::after {
-  content: '';
+  content: "";
   position: absolute;
   z-index: -1;
 }

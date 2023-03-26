@@ -5,7 +5,7 @@ import axios from "axios";
 import {withAuthSsr} from "@/lib/session";
 
 function useCharacters() {
-  return useQuery({
+  return useQuery<any>({
     queryKey: ["characters"],
     queryFn: async () => {
       const { data } = await axios.get("/api/characters");
@@ -20,7 +20,7 @@ export default function Characters() {
     <>
       <main className={styles.main}>
         <div>
-          {data?.characters?.map((character, index) => {
+          {data?.characters?.map((character: any, index: number) => {
             return (
               <Link href={`/characters/${character.characterId}`} key={index}>
                 <div>characterId</div>

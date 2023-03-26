@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import {withAuthSsr} from "@/lib/session";
 
 function useCharacter(characterId: string) {
-  return useQuery({
+  return useQuery<any>({
     queryKey: [`character/${characterId}`],
     queryFn: async () => {
       const { data } = await axios.get(`/api/characters/${characterId}`);

@@ -3,36 +3,24 @@ import CONFIG from "@/lib/config";
 
 const API_BASE_URL = "https://www.bungie.net/Platform";
 
-interface IBungieAuthHeaders {
-  Authorization: string;
-  "Content-Type"?: string;
-  "X-API-Key"?: string;
-}
-
-interface IBungieEquippedItem {
-  itemInstanceId: string;
-  itemId: number;
-  bucketHash: number;
-}
-
 export class BungieSDK {
   private readonly _accessToken: string;
-  public membershipId: string;
+  private membershipId: string = "";
 
   constructor(accessToken: string) {
     this._accessToken = accessToken;
   }
 
-  private async _get(url) {
-    const headers: IBungieAuthHeaders = {
+  private async _get(url: string) {
+    const headers = {
       Authorization: `Bearer ${this._accessToken}`,
       "X-API-Key": CONFIG.apiKey,
     };
     return axios.default.get(url, { headers });
   }
 
-  private async _post(url, data) {
-    const headers: IBungieAuthHeaders = {
+  private async _post(url: string, data: any) {
+    const headers = {
       Authorization: `Bearer ${this._accessToken}`,
       "Content-Type": "application/json",
       "X-API-Key": CONFIG.apiKey,

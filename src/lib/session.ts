@@ -14,7 +14,7 @@ const sessionOptions = {
   },
 };
 
-const serialize = function(obj, prefix) {
+const serialize = function(obj: any, prefix?: any): any {
   const str = [];
   for (const p in obj) {
     // eslint-disable-next-line no-prototype-builtins
@@ -30,7 +30,7 @@ const serialize = function(obj, prefix) {
 };
 
 
-export default function getPathWithQuery(path, query) {
+export default function getPathWithQuery(path: string, query: any) {
   const queryString = serialize(query).toString();
 
   if (queryString) return `${path}?${queryString}`;
